@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body > *{
+        max-width: 500px;
+        margin: auto;
+    }
+    h1{
+    font-size: 1em;
+    font-weight: normal;
+    border: 3px dashed aqua;
+    }
+    h1::after {
+    content: "★><★"; color:red;
+    }
+    h1::before {
+    content: "★ㅡ.ㅡ★"; color:red;
+    }
+    p::before {
+    content: "라인컴퓨터";
+    }
+    p{
+    border: 2px dashed red;
+    }
+    p:hover::before{background: red;}
+    h1:hover::before{background-color: blue; color: rgb(244, 217, 11);}
+    h1:hover::after{background-color: blue; color: rgb(190, 250, 9);}
+</style>
+</head>
+<body>
+
+<h1>가상 선택자 연습중입니다.</h1>
+
+<p>My name is Donald</p>
+<p>I live in Ducksburg</p>
+
+</body>
+</html>
