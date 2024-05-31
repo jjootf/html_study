@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 value 값 가져오기</title>
+    <style>
+        form{
+            margin: auto;
+            padding: 10px;
+            max-width: 400px;
+        }
+        
+        fieldset{
+            padding: 30px;
+        }
+        /* p> input{
+            float: right;
+        } */
+        input:not([type="color"], [type="radio"], [type="checkbox"]){
+            width: 200px;
+        }
+        input[type="image"]{
+            width: 100px;
+        }
+        header{
+            padding: 40px;
+            height: 30px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>type 속성</legend>
+            <p>아이디 : <input type="text" id="aa"><label for="aa"></label></p>
+            <p>비밀번호 : <input type="passward" id="bb"><label for="bb"></label></p>
+            <p>검색 : <input type="search" id="cc"><label for="cc"></label></p>
+            <p>이메일 : <input type="email" id="dd"><label for="dd"></label></p>
+            <p>전화번호 : <input type="tel" id="ee"><label for="ee"></label></p>
+            <p>컬러선택 : <input type="color" id="ff"><label for="ff"></label></p>
+            <p>수량 : <input type="number" min="1" max="10" value="1" id="gg"><label for="gg"></label></p>
+            <p>만족도 : <input type="range" min="1" max="10" value="1" id="hh"><label for="hh"></label></p>
+            <p>예 : <input type="radio" name="receive" checked="checked" id="ii"><label for="ii"></label>아니요<input type="radio" name="receive" id="jj"><label for="jj"></label></p>
+            <p>html <input type="checkbox" checked="checkbed" id="kk"><label for="kk"></label>css<input type="checkbox" id="ll"><label for="ll"></label></p>
+            <p><input type="submit" value="전송" id="mm"><label for="mm"></label></p>
+            <p><input type="reset" value="취소" id="nn"><label for="nn"></label></p>
+            <p><input type="button" value="확인" id="oo"><label for="oo"></label></p>
+            <p><input type="image" src="images/button.jpg" alt="검색" id="pp"><label for="pp"></label></p>
+            <p><input type="file" id="qq"><label for="qq"></label></p>
+
+            <p>
+                이메일수신동의<br>
+                <span>
+                    <input type="radio" id="yes" value="수신함" name="mail"><label for="yes">예</label>
+                    <input type="radio" id="no" value="수신안함" name="mail"><label for="no">아니요</label>
+                </span>
+            </p>
+            <p>
+                취미 다중선택<br>
+                <span>
+                    <input type="checkbox" value="등산" name="hobby" id="h1"><label for="h1">등산</label>
+                    <input type="checkbox" value="운동" name="hobby" id="h2"><label for="h2">운동</label>
+                    <input type="checkbox" value="독서" name="hobby" id="h3"><label for="h3">독서</label>
+                    <input type="checkbox" value="영화감상" name="hobby" id="h4"><label for="h4">영화감상</label>
+                    <input type="checkbox" value="게임" name="hobby" id="h5"><label for="h5">게임</label>
+                </span>
+            </p>
+
+            <p><label for="file">파일선택</label><input type="file" id="file"></p>
+            <button type="button"><img src="images/button.jpg" alt="보내기"></button>
+        </fieldset>
+    </form>
+    <footer></footer>
+    <script>
+        const btn = document.querySelector("button");
+        const he = document.querySelector("header");
+        const foo = document.querySelector("footer");
+        btn.addEventListener("click", bbb);
+
+        function bbb(){
+            const haa = document.querySelectorAll("input[name='hobby']:checked");
+            for(const iii of haa){
+                he.innerHTML += iii.value + "...";
+            }
+        }
+        const num = [10, 20, 30, 40, 50];
+        for(const jjj of num){
+            foo.innerHTML += jjj + "<br>";
+        }
+    </script>
+</body>
+</html>
