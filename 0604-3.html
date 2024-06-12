@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript practice</title>
+</head>
+<body>
+    <p>3</p>
+    <script>
+        let x = 5;
+        let y = 3;
+        let z = '5';
+        
+        // 5와 3은 같다) 여기에 대한 대응은 "틀렸다", 두개의 value는 틀리다.
+        console.log(x == y); //false
+        // 5와 '5'는 같다) 여기에 대한 대응은 "같다", 두개의 value는 같다.
+        console.log(x == z); // true
+        // 5와 "5" 같다) 응답은 "틀림" 두개의 value는 같다, 그리고 두개의 type은 틀리다. 
+        console.log(x === z); // false
+        
+        const $p = document.querySelector("p");
+        console.log($p.innerHTML == y); // true
+        console.log($p.innerHTML === y); //false
+        y++; // 3 + 1 = 4
+        console.log(y);
+        $p.innerHTML += 1;
+        console.log($p.innerHTML); //'3' + '1' = "31"
+        
+        let pp = Number($p.innerHTML); // Number("31")하여 31은 숫자가 됨 (강제형변환)
+        pp++;
+        $p.innerHTML = pp;
+</script>
+</body>
+</html>

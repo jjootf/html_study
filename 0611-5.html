@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeInterval()메소드를 통해 콜백함수 이해하기</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        h1{
+            background: radial-gradient(greenyellow, azure);
+            display:inline-block;
+            border-radius: 20px;
+            color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+
+    <script>
+        setInterval(() => x(), 1000); // 1초마다 x()함수 호출
+
+        x = () => {
+            // 교재 373 내장 객체
+            const d = new Date();
+            console.log(d.getDay);
+            
+            let i = d.getDay();
+            switch(i){
+                case 0:
+                    i = "월요일";
+                    break;
+                case 1:
+                    i = "화요일";
+                    break;
+                case 2:
+                    i = "수요일";
+                    break;
+                case 3:
+                    i = "목요일";
+                    break;
+                case 4:
+                    i = "금요일";
+                    break;
+                case 5:
+                    i = "토요일";
+                    break;
+                case 6:
+                    i = "일요일";
+                    break;
+                default:
+                    i = "선택하세요."
+
+            }
+
+            //console.log(d.getSeconds());
+            document.querySelector("h1").innerHTML =
+            `지금 시작은<br> ${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()} 이며 <br> ${i}입니다.`;
+        }
+    </script>
+</body>
+</html>

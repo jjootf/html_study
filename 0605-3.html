@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float practice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        #ra h2{
+            display: none;
+        }
+        #ra {
+            max-width: 1500px;
+            border: 1px solid skyblue;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            /* animation: move 2s both;  */
+            left: 0px;
+        }
+        @keyframes move{
+            from {
+                left: 0;
+            }
+            to{
+                left:500px;
+            }
+        }
+        
+        #ra div{
+            width: 200px;
+            height: 200px;
+            background-color: blanchedalmond;
+            margin: 10px;
+            transition: 0.5s;
+        }
+        #ra div:nth-of-type(1) {
+            background-color: red;
+            border-radius: 50%;
+            transition: 0.7s;
+        }
+        #ra div:nth-of-type(1):hover{
+            transform: scale(1.5);
+        }
+        #ra div:nth-of-type(2){
+            width: 400px;
+            background-color: aliceblue;
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+            position: relative;
+            top: 0;
+            transition: 0.5s;
+        }
+        #ra div:nth-of-type(2).up{
+            top: 50px;
+        }
+        #ra div:nth-of-type(3){
+            border-top-left-radius: 200px;
+        }
+        #ra div:nth-of-type(4){
+            border-radius: 300px 0px;
+            background-color: rgb(127, 188, 36);
+        }
+        #ani{
+            border: 1px solid orange;
+            width: 350px;
+            position: relative;
+            /* animation: move 1s both alternate infinite linear; 교재 227 */
+            left: 0px;
+            /* timing funcition easy linear */
+        }
+        #ani h2{
+            display:block;
+        }
+        #ani a{
+            border: 1px solid aquamarine;
+            display: block;
+            background-color: honeydew;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            width: 300px;
+            transition: 0.5s;
+        }
+        #ani a:hover{
+            width: 350px;
+            background:linear-gradient(rgb(69, 205, 192),rgb(85, 211, 144),rgb(88, 222, 191));
+        }
+
+        /*  마우스 호버시 이동하기 */
+        #move{
+            border: 3px solid yellowgreen;
+        }
+        #move> div{
+            border: 1px solid red;
+            height: 100px;
+        }
+        #move .pa div{
+            width: 200px;
+            height: 100%;
+            background-color: brown;
+            position: relative;
+            left: 0;
+            transition: 0.5s;
+            
+        }
+
+        /* 마우스창에서 이동 */
+        #move .pa{
+            height: 100px;
+            border: 1px solid green;
+        }
+        #move .pa:hover div{
+            left: 500px;
+        }
+        /* js로 호버 이동 구현 */
+        #move .pa.js{
+            background-color: blueviolet;
+            width: 200px; 
+            margin-bottom: 100px; 
+            position: relative; 
+            transition: 0.5s;
+            left: 0;
+        }
+        #move .pa.js.mo {
+            left: 500px;
+        }
+        ul{
+            border: 1px solid red;
+            width: 70%;
+        }
+        ul span{
+            float: right;
+        }
+        @media(width:500px){
+            ul {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <ul>
+            <li><a href="#">line</a><span>2024-06-05</span></li>
+            <li><a href="#">computer</a><span>2024-06-05</span></li>
+            <li><a href="#">art</a><span>2024-06-05</span></li>
+            <li><a href="#">shop</a><span>2024-06-05</span></li>
+        </ul>
+        <section id="move">
+            <h2>마우스 호버시 이동하기</h2>
+            <div class="pa">
+                <div></div>
+            </div>
+            <div class="pa js"></div>
+        </section>
+        <section id="ra">
+            <h2>반달이나 부채골모양 만들기</h2>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+        <section id="ani">
+            <h2>마우스호버 애니메이션</h2>
+            <nav">
+                <a href="https://naver.com">Naver</a>
+                <a href="https://apple.com">Appple</a>
+                <a href="https://adobe.com">Adobe</a>
+                <a href="https://google.com">Google</a>
+                <a href="https://microsoft.com">Microsoft</a>
+            </nav>
+        </section>
+    </div>
+    <script>
+        const x = document.querySelector(".js");
+        const y = document.querySelector("#move");
+        const z = document.querySelector("#ra div:nth-of-type(2)");
+
+        x.addEventListener("mouseenter", () => { x.classList.add("mo");});
+        y.addEventListener("mouseleave", () => { x.classList.remove("mo");});
+        
+        z.addEventListener("mouseenter", () => { z.classList.add("up");});
+        z.addEventListener("mouseleave", () => { z.classList.remove("up");});
+    </script>
+</body>
+</html>

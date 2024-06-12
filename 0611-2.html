@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 처리 순서</title>
+</head>
+<body>
+    <p>함수공부</p>
+    <script>
+        $p = document.querySelector("p");
+        hi = (i) =>{
+            $p.innerHTML = i;
+        }
+        // hi();
+
+        aa = () =>{
+            hi("만나서 반가워");
+        }
+        aa();
+
+        bb = () =>{
+            hi("잘가~ 다음에 또 보자");
+        } 
+        bb();
+    </script>
+</body>
+</html>

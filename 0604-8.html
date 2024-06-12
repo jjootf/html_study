@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form and switch()문</title>
+    <style>
+        body{
+            height: 200vh;
+            background-image: url("images/button.jpg"),url(images/summer.png);
+            background-repeat:  repeat-x, repeat-y;
+            background-attachment: fixed, scroll;
+            background-position: center center, center center;
+        
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get">
+        <label for="n">과일</label><input type="text" id="n">
+        <button>장바구니담기</button>
+    </form>
+    <p>result</p>
+
+    <script>
+        const x1 = document.querySelector("#n");
+        const x2 = document.querySelector("button");
+        x2.addEventListener("click", () => { zz();});
+        zz = () => {
+            let y = x1.value;
+            switch(y){
+                case "사과":
+                    y += "2000원입니다.";
+                    break;
+                case "딸기":
+                    y += "2500원입니다.";
+                    break
+                case "바나나":
+                    y += "1500원입니다.";
+                    break;
+                default:
+                    y += "는 품절입니다.";
+            }
+            document.querySelector("p").innerHTML = y;
+        }
+    </script>
+</body>
+</html>

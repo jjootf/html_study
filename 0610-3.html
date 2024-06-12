@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for of과 for in문</title>
+</head>
+<body>
+    <ol>
+        <li>서울</li>
+        <li>대구</li>
+        <li>대전</li>
+        <li>부산</li>
+    </ol>
+    <footer>결과표시하는곳</footer>
+    <script>
+        const city = document.querySelectorAll("ol li");
+        const f = document.querySelector("footer");
+
+        /*for(const i in city){
+            console.log(i);
+            f.innerHTML = i;
+        }*/
+        let x = "";
+        for(const i of city){
+            console.log(i);
+            x += i.innerText + ",";
+        }
+        f.innerText = x;
+    </script>
+</body>
+</html>

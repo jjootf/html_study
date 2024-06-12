@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>setInterval() 메소드로 공굴리기</title>
+  <style>
+    div {
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(pink, red);
+        border-radius: 50%;
+        position: relative;
+        animation: animate 2s linear infinite;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(aqua, skyblue);
+        position: absolute;
+        top: 0;
+        left: 100px;
+        animation: animate 2s linear infinite;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes animate {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+        div,footer {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    </style>
+</head>
+<body>
+  <div></div>
+  <footer></footer>
+</body>
+</html>

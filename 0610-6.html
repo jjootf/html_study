@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach문과 DOM</title>
+</head>
+<body>
+    <ol>
+        <li>1200원</li>
+        <li>2500원</li>
+        <li>2800원</li>
+        <li>3000원</li>
+    </ol>
+    <footer>결과표시하는곳</footer>
+    <script>
+        const x1 = document.querySelector("ol");
+        const x2 = document.querySelectorAll("ol li");
+        const y = document.querySelector("footer");
+        
+        // const num = [1,2,3];
+        let sum=0;
+        x2.forEach((i) => { // 각각 인덱스별로 (index, 목록, length)
+            return sum += parseInt(i.innerText);
+        } );
+        console.log(sum);
+        y.innerText = "결제하실 금액은 " + sum + "원 입니다." ;
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach문과 DOM</title>
+</head>
+<body>
+    <ol>
+        <li>1200원</li>
+        <li>2500원</li>
+        <li>2800원</li>
+        <li>3000원</li>
+    </ol>
+    <footer>결과표시하는곳</footer>
+    <script>
+        const x = document.querySelectorAll("ol li");
+        const y = document.querySelector("footer");
+        x.forEach(function(i){
+            console.log(i.innerText);
+            const z = parseInt(i.innerText);
+            console.log(z);
+            y.innerHTML += "<br>" + z;
+        });
+    </script>
+</body>
+</html>

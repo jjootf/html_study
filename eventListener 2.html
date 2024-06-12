@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 인수 2개 받아오기</title>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        caption{
+            font-size: 1.3rem;
+            padding-bottom: 5px;
+            text-align: left;
+        }
+        td, th{
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+        /* tr td:first-of-type{
+            text-align: center;
+        } */
+    </style>
+</head>
+<body>
+    <table>
+        <caption>상품에 따른 상하반기 판매량</caption>
+        <colgroup>
+            <col style="background-color: aliceblue;">
+            <col style="background-color: bisque;">
+            <col style="background-color: burlywood;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">구분</th>
+                <th scope="col">데스크탑 PC</th>
+                <th scope="col" onclick="su('짜장면','짬뽕')">스마트폰</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- argument -->
+                <th scope="row" onclick="sang('STRAWBERRY LATTE')">상반기 판매수</th>
+                <td onclick ="gg()">2만대</td>
+                <td onclick="oo(50,70)">5만대</td>
+            </tr>
+            <tr>
+                <th scope="row" onclick="ha(3,5)">하반기 판매수</th>
+                <td id="sam">3만대</td>
+                <td id="chil">7만대</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align: center;">글자</p>
+    <p></p>
+    <script>
+        const ss = document.querySelector("tbody tr:first-child :nth-child(2)");
+        ss.style.background = "red";
+        const pp = document.querySelector("p");
+        function gg(){
+            // alert(ss);
+            pp.innerHTML = ss.innerHTML;
+        }
+
+        // parameter
+        function sang( i ){
+            // alert(i);
+            // connect
+            pp.innerHTML = i + "는" + typeof(i) + "형입니다.";
+        }
+
+        function ha(i,j){
+            pp.innerHTML = "나는 오늘 오후 " + i + "시에 친구와 중앙로" + j + "가에서 만나기로 했다";
+        }
+
+        function su(i,j){
+            pp.innerHTML = "오늘은 친구와 " + i + "과 " + j + "을 같이 나눠먹었다";
+        }
+
+        function oo(i,j){
+            pp.innerHTML = "올해 목표는 " + (i+j)+ " 만대 판매입니다.";
+        }
+        
+        // addEventListener
+        const ccc = document.querySelector("#chil");
+        ccc.addEventListener("click", function() {
+            bbb( 30, 20);
+        })
+        
+        bbb(30,40);
+        function bbb(i,j){
+            pp.innerHTML = "오늘은 중앙동에서 "+ (i+j) + "만원을 분실했습니다.😢🤦‍♂️";
+            alert(i+ j); // 50을 반환
+        }
+
+        const ddd = document.querySelector("#sam");
+        ddd.addEventListener("click", function() {
+            sam("딸기","바나나");
+        })
+
+        function sam(i,j){
+            pp.innerHTML = "오늘은 학원에서 "+ i + "와 "+  j + "를 꺼내 먹었습니다.";
+        }
+
+        /*const ddd = document.querySelector("tbody tr:last-child :nth-child(2)");
+        ddd.addEventListener("click", sam);*/
+    </script>
+</body>
+</html>

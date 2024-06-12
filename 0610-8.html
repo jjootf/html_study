@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스를 스크롤에 따른 디자인 변화</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 200vh;
+            background: linear-gradient(red,gold,green);
+        }
+        h1{
+            text-align: center;
+            position: fixed;
+            border: 1px solid bisque;
+            padding: 20px;
+            left: calc((100%+ 650px) / 2);
+            width: 650px;
+            border-radius: 100px 100px 0 0;
+            top: 100px;
+            transition: 0.5s;
+        }
+        h1.up{
+            top:0;
+            border-radius: 0 0 100px 100px;
+            border: 1px solid aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>스크롤을 내렸다가 다시 다시 올려보세요.</h1>
+    <script>
+        const $h1 = document.querySelector("h1"); // 객체형 변수
+        window.addEventListener("scroll",()=>change());
+
+        change = () =>{
+            let i = window.pageYOffset;
+            // console.log(i)
+            i = Math.round(i);
+            // console.log(i);
+            if (i<100){
+                $h1.classList.add("up");
+            }else{
+                $h1.classList.remove("up");
+            }
+        }
+    </script>
+</body>
+</html>

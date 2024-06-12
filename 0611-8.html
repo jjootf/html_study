@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/fale에 따른 다른 답변</title>
+    <style>
+        p{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(red,blue);
+            position: relative;
+        }
+
+        div{
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(blue,red);
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <div></div>
+
+    <script>
+        const $p = document.querySelector("p");
+        const $div = document.querySelector("div");
+        //setInterval(함수명, 지체시간); // 지체시간 간격을 두고 지속적으로 함수를 호출한다.
+        setInterval(()=>move(), 10);
+
+        let i =10;
+        let j = true;
+        let sp = 5;
+
+        move = () =>{
+            if(j){
+                i = i + sp;
+                // 내장객체와 사용자객체
+                if(i >= (window.innerWidth - $p.offsetWidth)){
+                    j = false;
+                }
+            }else{
+                i = (i + (-sp));
+                if(i <= 0){
+                    j = true;
+                }
+            }
+            $p.style.left = i + "px";
+            console.log($p.style.left);
+            $div.style.top = i + "px";
+            $div.style.left = i + "px";
+            console.log($p.style.top);
+        }
+        // alert($p.offsetWidth);
+    </script>
+</body>
+</html>
