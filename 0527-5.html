@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 요소에 컨텐츠 넣기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+    <style>
+        * {margin:0; padding: 0px;}
+        body{
+            margin-top: 150px;
+        }
+        section{
+            max-width: 900px;
+            margin: auto;
+            border: 3px dashed red;
+            display: flex;
+            align-items: center;
+            /* transform: rotate(-20deg);
+            transition: 0.5s;
+            */
+            border-radius: 30px;
+            box-shadow: -3px -3px 10px red; 
+            
+            background-color: aliceblue;
+        }
+        h1{
+            font-family: "Dongle", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        } 
+        /* section:hover{
+            transform: rotate(0);
+            cursor: pointer;
+        } */
+        p{
+            flex:1;
+            background-color: cadetblue;
+        }
+        ol{
+            flex:2; background-color: beige; list-style-position: inside;padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 style="flex:1; background-color: antiquewhite; padding: 30px;">반응형 웹퍼블리싱 학습 순서</h1>
+        <ol> <!-- 0번 인덱스-->
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <ol> <!-- 1번 인덱스-->
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <p>11111</p>
+        <p>11111</p>
+        <p>11111</p>
+    </section>
+    <script>
+        let sum = 0;
+        for(let i = 0; i<=10; i++){
+            sum += i; // sum = sum + i
+            console.log(typeof(i)); // number(11) 반환한다.
+        }
+        console.log(sum);
+
+        const x = document.querySelectorAll("ol li"); // object, 객체 개체
+        const y = "라인컴퓨터";
+        const z = 23;
+
+        for(let i = 0; i < 5; i++){
+            x[i].style.border = "3px dashed red";
+        }
+        console.log(typeof(x)); // object 객체
+        console.log(typeof(y)); // string 문자열
+        console.log(typeof(z)); // number 숫자
+        console.log(typeof(i)); // undefined 정의되지않음
+
+        // 교재 p323 undefined 데이터부분
+        const obj = {}; 
+        obj.name = "홍길동";
+        obj.age = 19;
+        console.log(typeof(obj));
+        console.log(obj.name, obj.age);
+
+        const shop = {}; // 변할수없는 변수인 shop 데이터 추가 
+        shop.myBack = 5; // 내 가방은 5개의 의미 //
+        shop.myAge = 23; // 내 나이는 23 // 
+        console.log(shop) // {myBack : 5, myAge : 23} 속성값 반환
+
+        // { key : value } : key값과 value값이 있음
+        const linecom = {address : "ansan", age : 7};
+        console.log(linecom);
+        document.querySelector("p").innerHTML = linecom.age; // querySelectorAll 여러개 있을때 선택해서 값 변경
+    </script>
+</body>
+</html>

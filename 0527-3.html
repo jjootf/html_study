@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 요소에 컨텐츠 넣기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+    <style>
+        * {margin:0; padding: 0px;}
+        body{
+            margin-top: 150px;
+        }
+        section{
+            max-width: 900px;
+            margin: auto;
+            border: 3px dashed red;
+            display: flex;
+            align-items: center;
+            /* transform: rotate(-20deg);
+            transition: 0.5s;
+            */
+            border-radius: 30px;
+            box-shadow: -3px -3px 10px red; 
+            
+            background-color: aliceblue;
+        }
+        h1{
+            font-family: "Dongle", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        } 
+        /* section:hover{
+            transform: rotate(0);
+            cursor: pointer;
+        } */
+        p{
+            flex:1;
+            background-color: cadetblue;
+        }
+        ol{
+            flex:2; background-color: beige; list-style-position: inside;padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 style="flex:1; background-color: antiquewhite; padding: 30px;">반응형 웹퍼블리싱 학습 순서</h1>
+        <ol> <!-- 0번 인덱스-->
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <ol> <!-- 1번 인덱스-->
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <p>11111</p>
+        <p>11111</p>
+        <p>11111</p>
+    </section>
+    <script>
+        // 대소문자 구분못함
+        let x = 5;
+        let y = 3;
+        x= 20;
+        document.querySelector("p").innerHTML = x+y; // 요소를 가르킬수있다.
+        //document.querySelectorAll("ol li")[3].style.border = "3px dashed white";
+        //document.querySelectorAll("ol:last-of-type li")[2].style.background = "white";
+        //document.querySelectorAll("ol li")[7].style.background = "white";
+
+        document.querySelectorAll("p")[2].innerHTML = y;
+        document.querySelectorAll("p")[2].style.border = "1px solid red";
+        document.querySelector("h1").style.background = "gold"; //antiquewhite -> gold 색 변경
+        document.querySelectorAll("ol")[1].style.background = "aqua"; //beige -> aqua 색 변경 / [1] 열
+        
+        /*for(let i=0; i<5; i++){
+
+        }*/
+
+        // 비교문 학습 (결과값은 true 또는 false 이다)
+        console.log( 5 > 5);
+        console.log( x > y);
+        console.log( x >= y);
+
+        x++; // x= x+1, 20 = 20 + 1, 20=21,  결과는 21임 (대상변수는 x이므로 x =21)
+        console.log(x);
+        y--;
+        console.log(y);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+body {
+    font-family: "Dokdo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+
+table{
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    /* 하나의 셀 사이의 테두리를 묶는다 */
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead tr{
+    background-color: azure;
+}
+
+td, th{
+    border: 1px solid black;
+    color: aquamarine;
+    text-shadow: 5px 5px 5px blue;
+    
+}
+
+.c1{
+    background-color: yellow;
+    width: 48%;
+}
+.c2{
+    background-color: skyblue;
+    width: 52%;
+}
+
+/* @media(max-width:550px){
+    table{
+        flex-direction: column;
+    }
+} */

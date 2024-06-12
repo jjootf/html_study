@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 배열(Array) 객체 연습하기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+    <style>
+        * {margin:0; padding: 0px;}
+        body{
+            margin-top: 150px;
+        }
+        section{
+            max-width: 900px;
+            margin: auto;
+            border: 3px dashed red;
+            display: flex;
+            align-items: center;
+            /* transform: rotate(-20deg);
+            transition: 0.5s;
+            */
+            border-radius: 30px;
+            box-shadow: -3px -3px 10px red; 
+            
+            background-color: aliceblue;
+        }
+        h1{
+            font-family: "Dongle", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        } 
+        /* section:hover{
+            transform: rotate(0);
+            cursor: pointer;
+        } */
+        p{
+            flex:1;
+            background-color: cadetblue;
+        }
+        ol{
+            flex:2; background-color: beige; list-style-position: inside;padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 style="flex:1; background-color: antiquewhite; padding: 30px;">반응형 웹퍼블리싱 학습 순서</h1>
+        <ol> <!-- 0번 인덱스-->
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <ol> <!-- 1번 인덱스-->
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <p>11111</p>
+        <p>11111</p>
+        <p>11111</p>
+    </section>
+    <script>
+        //Array 객체를 선언하고 5개의 값을 할당하였다.
+        const myfruits = ["딸기","바나나","포도","망고","수박"]
+        //console.log(myfruits);
+        //console.log(typeof(myfruits)); // object (array도 객체의 일종)
+        //console.log("오늘은 귀가길에 " + myfruits[2] + "를 살것이다.");
+        document.querySelectorAll("p")[1].innerHTML = myfruits;
+        document.querySelector("p:last-of-type").innerHTML = myfruits[4];
+        document.querySelector("p:nth-of-type(3)").innerHTML = myfruits[2];
+
+        // 배열 연습 (로또 번호 생성)
+        let lotto = [15,17,25,30,35,45]; // 배열(Array)
+        console.log(lotto);
+        console.log(typeof(lotto));
+        document.querySelector("p:nth-of-type(1)").innerHTML = lotto;
+    </script>
+</body>
+</html>

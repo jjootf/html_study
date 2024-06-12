@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트로 태그요소 추가</title>
+    <title>background gradient</title>
     <style>
         *{
             margin: 0;
@@ -12,11 +12,7 @@
             box-sizing: border-box;
         }
         body{
-            background-image: url("media/cat2.gif"),url("media/cat.gif"), url("media/panguin.gif");
-            background-repeat: repeat, no-repeat, repeat;
-            background-size: 500px, 100px, 100px;
-            background-attachment: scroll, fixed, scroll;
-            height: 200vh;
+            background-image: url("images/summer.png"), url("images/3d_cube.jpg"), linear-gradient(to right, rgba(0,100,0,0), rgba(0,100,0,1));
         }
         #layout{
             max-width: 1000px;
@@ -133,7 +129,7 @@
 <body>
     <div id="layout">
         <header>
-            <h1>반응형 웹</h1>
+            <h1 draggable="true">드래그하세요</h1>
             <nav>
                 <a href="#">메뉴1</a>
                 <a href="#">메뉴2</a>
@@ -149,7 +145,7 @@
                     <source src="media/dark-mantras-212990.mp3" type="audio/mpeg">
                 </audio>
                 <video controls>
-                    <source src="media/movie.mp4" type="video/mp4">
+                    <source src="media/sea.mp4" type="video/mp4">
                 </video>
                 <p>라인컴퓨터아트학원</p>
             </section>
@@ -175,8 +171,8 @@
             </div>
         </main>
         <footer>
-            <address>경기도 부천시 오정구 삼정동    032)674-5685 icoxpub@naver.com</address>
-            <p>COPYRIGHT @ All rights reserved.</p>
+            <address  class="ccc"><span draggable="true" id="bbb">경기도 부천시 오정구 삼정동    032)674-5685 icoxpub@naver.com</span></address>
+            <p class="ccc">COPYRIGHT @ All rights reserved.</p>
         </footer>
     </div>
 
@@ -202,6 +198,30 @@
         // alert($ul);
         $ul.innerHTML = "<li>딸기</li>";
         $pp.after($ul);
+
+        // 드래그이벤트 연습
+        const $h1 = document.querySelector("h1");
+        $h1.addEventListener("dragstart", () => zz(3, 5));
+        zz = (i,j) => { 
+            let xx = i * j;  //15
+            $h1.innerHTML = xx;
+        }
+
+        // 콘텐츠 그룹01, 영역에서 목록태그를 드래그하면 '수박' 항목이 추가된다.
+        const $con1 = document.querySelector("section ul");
+        // $con1.setAttribute("draggable", true);
+        $con1.draggable=true;
+        $con1.addEventListener("dragstart", () => uu());
+        
+        // ul의 마지막 자식요소에 새로운 요소를 추가
+        uu = () => {$con1.innerHTML += "<li>수박</li>"; }
+
+        // 하단주소를 드래그하여 아래로 옮기기
+        document.addEventListener("dragstart", (e) => e.dataTransfer.setData("zzz", e.target.id));
+        document.addEventListener("dragover", (e) => e.preventDefault()); //
+        document.addEventListener("drop", (e) => {
+            const x = e.dataTransfer.getData("zzz");
+            e.target.appendChild(document.getElementById(x))});
     </script>
 </body>
 </html>

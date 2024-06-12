@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셀합치기</title>
+    <link rel="stylesheet" href="0530-5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dokdo&display=swap" rel="stylesheet">
+    <style>
+        body {
+                font-family: "Dokdo", system-ui;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 25px;
+            }
+
+        table{
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            /* 하나의 셀 사이의 테두리를 묶는다 */
+            border-collapse: collapse;
+        }
+
+        thead tr{
+            background-color: azure;
+        }
+
+        td, th{
+            border: 1px solid black;
+            color: antiquewhite;
+            text-shadow: 5px 5px 5px blue;
+            padding: 5px 0 8px;
+        }
+        td{
+            text-align: center;
+        }
+
+        .c1{
+            background-color: yellow;
+            width: 50%;
+        }
+        .c2{
+            background-color: skyblue;
+            width: 50%;
+        }
+
+        /* @media(max-width:550px){
+            table{
+                flex-direction: column;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="c1">
+            <col class="c2">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="2">교과목</th>
+                <!-- <th>점수</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">HTML</th>
+                <td id="s1">93점</td>
+            </tr>
+            <tr>
+                <!-- <th>CSS</th> -->
+                <td id="s2">92점</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>평균</th>
+                <td id="s3" rowspan="2"></td>
+            </tr>
+            <tr>
+                <th>평균</th>
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <th colspan="2">연습중</th>
+                <!-- <td>작업중</td> -->
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+</html>

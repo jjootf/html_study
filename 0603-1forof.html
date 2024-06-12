@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for of repeat</title>
+</head>
+<body>
+    <h3>result </h3>
+    <script>
+        // const x = [2,4,6,3]; // array
+        //    let  y = 0; // let키워드는 재할당(사칙연산가능, 값변경가능)
+        let zz = document.querySelector("h3");
+        /*for(let i of x){
+            y +=i;
+            zz.innerHTML += "<br>" + y;
+        }*/
+        const xx = ["딸기","바나나","파인애플"];
+        let yy = "";
+        
+        for(let i of xx){
+            yy += i;
+            zz.innerHTML = yy;
+        }
+    </script>
+</body>
+</html>

@@ -10,11 +10,15 @@
 
     <style>
         #layout1{
+            /* 테두리 */
             border: 1px solid rgb(244, 244, 23);
+            /* 최대넓이 */
             max-width: 500px;
+            /* 외부여백 */
             margin: auto;
 
         }
+        /* 가상선택자 첫번째 글자*/
         #layout1 p::first-letter{
             font-size:2rem; border:2px solid rgb(110, 107, 165); background-color: rgba(0, 0,255, 0.3);
             border-radius: 10px;
@@ -24,12 +28,14 @@
         #layout1 p:hover::first-letter{
             background: red;
         }
+        /* 바디 내부여백 0 직접 설정하겠다.*/
         body{
-            margin: 0px;
+            margin: 0;
         }
 
         header{
             background: linear-gradient(orange, yellow);
+            /* 내부 여백 30px */
             padding: 30px;
         }
         header h1{
@@ -41,15 +47,19 @@
             height: 300px;
             background-color: aliceblue;
             margin: 20px auto;
+            /* 원형 그라디언트 */
             background: radial-gradient(circle,rgb(105, 98, 98),rgb(187, 192, 187),rgb(190, 190, 241));
+            /* 원형 모양 */
             border-radius: 10px;
             transition: 0.5s;
         }
+        /* nav에 마우스 대면 */
         nav:hover{
             background: radial-gradient(rgb(104, 193, 201),rgb(74, 98, 99),rgb(122, 157, 227));
             transform: rotate(10deg);
         }
 
+        /* 옆으로 정렬하겠다 */
         #layout2{
             display: flex;
         }

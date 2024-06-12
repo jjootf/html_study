@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice arrow function</title>
+</head>
+<body>
+    <h2 style="display: inline;">on mouse cussor</h2>
+    <main>mission <br> show mouse hover 'linecomputer' word</main>
+    <script>
+        const a1 = 25; // 절대로 값이 변경 불가 (const 라서)
+        const a2 = 37; // 절대로 값이 변경 불가 (const 라서)
+        const $h2 = document.querySelector("h2");
+        const $main = document.querySelector("main");
+        // alert("h2");
+
+        // h2 마우스를 갖다대는 증상을 감지하면 a4() 함수를 호출한다.
+        $h2.addEventListener("mouseover", () => { $h2.innerHTML = "lineartcomputer" });
+
+        // main 마우스를 갖다대는 증상을 감지하면 a6() 함수를 호출한다.
+        $main.addEventListener("mouseenter", () => { a6()});
+        a6 = () => $main.innerHTML = "main yellow";
+    </script>
+</body>
+</html>
